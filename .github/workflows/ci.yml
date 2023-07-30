@@ -1,0 +1,49 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # fetches all tags
+
+      - name: Auto tag
+        id: auto_tag
+        run: |
+          VERSION=`git describe --abbrev=0 --tags`
+          VERSION_BITS=(${VERSION//./ })
+          VNUM1=${VERSION_BITS[0]}
+          VNUM2=${VERSION_BITS[1]}
+          VNUM3=${VERSION_BITS[2]}
+          VNUM3=$((VNUM3+1))
+          NEW_TAG="$VNUM1.$VNUM2.$VNUM3"
+          echo "::set-output name=NEW_TAG::${NEW_TAG}"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            samueljoli/otel-collector:latest
+            samueljoli/otel-collector:${{ steps.auto_tag.outputs.NEW_TAG }}
+
