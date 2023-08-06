@@ -25,6 +25,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           output-file: "false"
           skip-version-file: "true"
+          skip-commit: "true"
 
       - name: Create Release
         uses: actions/create-release@v1
