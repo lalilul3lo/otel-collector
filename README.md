@@ -1,14 +1,24 @@
 # 🔭 otel-collector
-A custom opentelemetry collectory distribution for receiving, processing and exporting telemetry data.
+A custom opentelemetry collector distribution for receiving, processing and exporting telemetry data.
 
 ![otel-collector](https://github.com/lalilul3lo/otel-collector/assets/12755671/d4adeaac-f7fe-49b1-8442-4a82f2321ea8)
 
 ## Usage
 ### Docker 🐳
-The collector requires a configuration file in order to know what to collect, process and export. When running the distribution as a container, you will need to mount a config file. Configuration files will need to be mounted to the following path: `/app/otel_config.yaml`
+**Prequisites:**
+- Authenticated with the Container registry (`ghcr.io`).
+> You need an access token to install private, internal, and public packages.
+```bash
+echo $PAT | docker login ghcr.io --username {some_username} --password-stdin
+```
 
-**Example:**
+**Dependencies:**
+- Otel [configuration](https://opentelemetry.io/docs/collector/configuration/) file
+> Required in order to know what to collect, process and export. When running the distribution as a container, you will need to mount a config file.
 
+> Configuration file will need to be mounted to the following path: `/app/otel_config.yaml`
+
+*Example using `docker run`:*
 ```bash
 docker run \
   -p 4317-4318:4317-4318 \
