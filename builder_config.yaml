@@ -26,5 +26,5 @@ processors:
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/processor/filterprocessor v0.82.0
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/processor/resourcedetectionprocessor v0.82.0
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/processor/metricstransformprocessor v0.73.0
-  - gomod: "github.com/honeycombio/opentelemetry-collector-configs/timestampprocessor v1.7.0"
+  - gomod: github.com/honeycombio/opentelemetry-collector-configs/timestampprocessor v1.7.0
 
