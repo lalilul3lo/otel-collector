@@ -41,3 +41,10 @@ The following is the components that comprise this otel distribution. [Basic kno
 ### Exporters
 - [`debugexporter`](https://github.com/open-telemetry/opentelemetry-collector/tree/main/exporter/debugexporter)
 - [`otlpexporter`](https://github.com/open-telemetry/opentelemetry-collector/tree/main/exporter/otlpexporter)
+### Processors
+- [`batchprocessor`](https://github.com/open-telemetry/opentelemetry-collector/blob/main/processor/batchprocessor/README.md)
+- [`memorylimiterprocessor`](https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/memorylimiterprocessor)
+- [`filterprocessor`](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/filterprocessor/README.md)
+- [`resourcedetectionprocessor`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/resourcedetectionprocessor)
+- [`metricstransformprocessor`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/metricstransformprocessor)
+- [`timestampprocessor`](https://github.com/honeycombio/opentelemetry-collector-configs/tree/main/timestampprocessor)
