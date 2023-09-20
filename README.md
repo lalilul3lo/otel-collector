@@ -38,3 +38,6 @@ The following is the components that comprise this otel distribution. [Basic kno
 - [`ballastextension`](https://github.com/open-telemetry/opentelemetry-collector/blob/main/extension/ballastextension/README.md)
 - [`healthcheckextension`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/extension/healthcheckextension)
 - [`pprofextension`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/extension/pprofextension)
+### Exporters
+- [`debugexporter`](https://github.com/open-telemetry/opentelemetry-collector/tree/main/exporter/debugexporter)
+- [`otlpexporter`](https://github.com/open-telemetry/opentelemetry-collector/tree/main/exporter/otlpexporter)
