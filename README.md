@@ -33,3 +33,8 @@ The following is the components that comprise this otel distribution. [Basic kno
 ### Receivers
 - [`otlpreceiver`](https://github.com/open-telemetry/opentelemetry-collector/blob/main/receiver/otlpreceiver/README.md)
 - [`hostmetricsreceiver`](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/hostmetricsreceiver/README.md)
+### Extensions
+- [`zpagesextension`](https://github.com/open-telemetry/opentelemetry-collector/tree/main/extension/zpagesextension)
+- [`ballastextension`](https://github.com/open-telemetry/opentelemetry-collector/blob/main/extension/ballastextension/README.md)
+- [`healthcheckextension`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/extension/healthcheckextension)
+- [`pprofextension`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/extension/pprofextension)
